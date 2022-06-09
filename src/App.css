@@ -1,74 +1,147 @@
 * {
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: inherit;
+}
+:root {
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --secondary-font: "Dongle", sans-serif;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background-image: linear-gradient(to right bottom, #2c3e50, #4ca1af, #2c3e50);
+  height: 100vh;
+}
+
+/* Remove arrows from input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+h1,
+form {
+  text-align: center;
+}
+
+#root,
+.App {
+  height: 100%;
 }
 .App {
-  text-align: center;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.App::-webkit-scrollbar {
+  width: 8px;
+}
+
+.App {
+  scrollbar-width: 8px;
+  scrollbar-color: #90a4ae #cfd8dc;
+}
+
+.App::-webkit-scrollbar-track {
+  background: #cfd8dc;
+}
+
+.App::-webkit-scrollbar-thumb {
+  background-color: #90a4ae;
+  border-radius: 6px;
+  border: 3px solid #cfd8dc;
 }
 .tip {
-  padding-bottom: 20px;
   font-size: 70px;
-  font-family: "Dongle", sans-serif;
+  font-family: var(--secondary-font);
+  color: #000;
 }
-.tip span:first-child {
-  color: #db7093;
-}
-.tip span:last-child {
-  color: #008b8b;
-}
+
 .form {
-  font-size: 25px;
-  width: 35%;
+  font-size: 20px;
+  width: 42vw;
   margin: 0% auto;
-  color: white;
-  background-color: #3030a8;
+  color: #000;
+  background: #fff;
+  box-shadow: 0 0 2rem var(--shadow-color);
   padding: 0px 40px;
   padding-top: 60px;
   border-radius: 15px;
 }
-.bil_amount,
-.percentage,
-.tip_amount,
-.total {
+
+.form-group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
+
+input,
+.btn {
+  border-radius: 5px;
+}
+
 input {
   text-align: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 25px;
-  font-size: 15px;
+  padding: 8px 10px;
+  font-size: 14px;
   font-weight: bold;
+  outline: none;
+  border: 1px solid #777;
 }
+
+input:focus {
+  border: 1px solid #333;
+}
+
 .btn {
   border: none;
   outline: none;
   padding: 10px 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  background-color: #ec2e2e;
-  color: white;
+  margin: 25px auto;
+  background: #2c3f51;
+  color: #eee;
+  font-weight: bold;
   font-size: 20px;
-  border-radius: 20px;
   cursor: pointer;
-  transition: 0.9s;
+  transition: 0.3s;
 }
 .btn:hover {
-  transition: 0.9s;
-  background-color: #900404;
+  box-shadow: 5px 5px 10px 2px var(--shadow-color);
+  transform: translateY(-5px);
 }
 .discount {
   color: #db7093;
   padding-bottom: 20px;
-  padding-bottom: 20px;
-  font-size: 40px;
-  font-family: "Dongle", sans-serif;
+  font-size: 25px;
+  font-family: var(--secondary-font);
+}
+
+@media only screen and (max-width: 1000px) {
+  .form {
+    width: 65vw;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .form {
+    width: 90vw;
+  }
 }
