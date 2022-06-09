@@ -1,12 +1,6 @@
-import './App.css';
-import TipCalculate from "./TipCalculate";
+import "./App.css";
+import TipCalculate from "./components/TipCalculate";
 
-function App() {
-  return (
-    <div>
-      <TipCalculate />
-    </div>
-  );
-}
+const App = () => <TipCalculate />;
 
 export default App;
